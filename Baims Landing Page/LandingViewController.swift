@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class LandingViewController: UIViewController {
 
@@ -14,6 +15,8 @@ class LandingViewController: UIViewController {
     
     // MARK: Origins
     var swimmingOrigin : CGPoint!
+    var airplaneWindowOriginOne : CGPoint!
+    var airplaneWindowOriginTwo : CGPoint!
     
     // MARK: Views
     var backgroundOne : UIView!
@@ -22,6 +25,7 @@ class LandingViewController: UIViewController {
     var pageControl : UIPageControl!
     var titleOne : UILabel!
     var swimmingImageView : UIImageView!
+    var airplaneWindow : AnimationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

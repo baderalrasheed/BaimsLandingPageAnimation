@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 extension LandingViewController
 {
@@ -24,6 +25,7 @@ extension LandingViewController
     {
         let swimmingMovementPath = self.view.frame.width-100
         let swimmingRotationPath = -120
+        let airplaneWindowMovementPath = self.view.frame.height/2.5
     
         swimmingImageView.layer.position.x = swimmingOrigin.x - CGFloat(percentageOfCurrentPage() * 1.5) * swimmingMovementPath
         swimmingImageView.layer.position.y = swimmingOrigin.y
@@ -36,6 +38,13 @@ extension LandingViewController
 //        print("current degrees = \(currentDegrees)")
         
         swimmingImageView.rotate(angle: CGFloat(neededDegrees - currentDegrees))
+        
+        airplaneWindow.center.x = self.view.frame.width/2
+        airplaneWindow.center.y = airplaneWindowOriginOne.y + CGFloat(percentageOfCurrentPage() * 1.5) * airplaneWindowMovementPath
+        
+        if percentageOfCurrentPage() >= 0.8 && airplaneWindow.isAnimationPlaying == false {
+            airplaneWindow.play(fromFrame: 14, toFrame: 100, loopMode: .autoReverse)
+        }
     }
 }
 

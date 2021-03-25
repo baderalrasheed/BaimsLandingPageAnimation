@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 extension LandingViewController
 {
@@ -45,6 +46,14 @@ extension LandingViewController
         swimmingImageView.image = #imageLiteral(resourceName: "swimming")
         swimmingImageView.contentMode = .scaleToFill
         
+        // MARK: Airplane Window
+        airplaneWindow = .init(name: "AirplaneWindow")
+        airplaneWindow.center = self.airplaneWindowOriginOne
+        airplaneWindow.frame.size = CGSize(width: 300, height: 300)
+        airplaneWindow.contentMode = .scaleAspectFit
+        airplaneWindow.loopMode = .playOnce
+        airplaneWindow.stop()
+        
         // MARK: Adding Subviews
         self.view.addSubview(backgroundOne)
         self.view.insertSubview(backgroundTwo, belowSubview: backgroundOne)
@@ -52,6 +61,7 @@ extension LandingViewController
         self.view.insertSubview(titleOne, aboveSubview: backgroundOne)
         self.view.addSubview(pageControl)
         self.view.addSubview(swimmingImageView)
+        self.view.addSubview(airplaneWindow)
         
         backgroundOne.translatesAutoresizingMaskIntoConstraints = false
         backgroundTwo.translatesAutoresizingMaskIntoConstraints = false
@@ -66,6 +76,7 @@ extension LandingViewController
     func setupOrigins(parentViewSize: CGSize)
     {
         swimmingOrigin = CGPoint(x: parentViewSize.width - 130, y: parentViewSize.height / 3)
+        airplaneWindowOriginOne = CGPoint(x: parentViewSize.width / 2, y: -250)
     }
     
     func setupConstraints()

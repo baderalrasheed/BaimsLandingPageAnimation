@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		4E9A1BC4260CC4560008B27B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9A1BC2260CC4560008B27B /* LaunchScreen.storyboard */; };
 		4E9A1BCD260CE3AC0008B27B /* LandingViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A1BCC260CE3AC0008B27B /* LandingViewController+Views.swift */; };
 		4E9A1BD2260CE45C0008B27B /* LandingViewController+Animators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A1BD1260CE45C0008B27B /* LandingViewController+Animators.swift */; };
+		4E9A1BD9260CFCAE0008B27B /* AirplaneWindow.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E9A1BD8260CFCAE0008B27B /* AirplaneWindow.json */; };
+		63D8C9032F034E8C409226C1 /* Pods_Baims_Landing_Page.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD48669B6DAE463AACFDB337 /* Pods_Baims_Landing_Page.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		4E9A1BC5260CC4560008B27B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E9A1BCC260CE3AC0008B27B /* LandingViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LandingViewController+Views.swift"; sourceTree = "<group>"; };
 		4E9A1BD1260CE45C0008B27B /* LandingViewController+Animators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LandingViewController+Animators.swift"; sourceTree = "<group>"; };
+		4E9A1BD8260CFCAE0008B27B /* AirplaneWindow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AirplaneWindow.json; sourceTree = "<group>"; };
+		DD48669B6DAE463AACFDB337 /* Pods_Baims_Landing_Page.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Baims_Landing_Page.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4E1D405D7AB93BDB303F709 /* Pods-Baims Landing Page.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baims Landing Page.release.xcconfig"; path = "Target Support Files/Pods-Baims Landing Page/Pods-Baims Landing Page.release.xcconfig"; sourceTree = "<group>"; };
+		FA30DC7498CC674028E5DCFF /* Pods-Baims Landing Page.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baims Landing Page.debug.xcconfig"; path = "Target Support Files/Pods-Baims Landing Page/Pods-Baims Landing Page.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63D8C9032F034E8C409226C1 /* Pods_Baims_Landing_Page.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B9F64E8146EFCD4676F022A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD48669B6DAE463AACFDB337 /* Pods_Baims_Landing_Page.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4E9A1BAB260CC4540008B27B = {
 			isa = PBXGroup;
 			children = (
 				4E9A1BB6260CC4540008B27B /* Baims Landing Page */,
 				4E9A1BB5260CC4540008B27B /* Products */,
+				E618D51666F89BEC5C981921 /* Pods */,
+				2B9F64E8146EFCD4676F022A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,8 +86,18 @@
 				4E9A1BC0260CC4560008B27B /* Assets.xcassets */,
 				4E9A1BC2260CC4560008B27B /* LaunchScreen.storyboard */,
 				4E9A1BC5260CC4560008B27B /* Info.plist */,
+				4E9A1BD8260CFCAE0008B27B /* AirplaneWindow.json */,
 			);
 			path = "Baims Landing Page";
+			sourceTree = "<group>";
+		};
+		E618D51666F89BEC5C981921 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA30DC7498CC674028E5DCFF /* Pods-Baims Landing Page.debug.xcconfig */,
+				E4E1D405D7AB93BDB303F709 /* Pods-Baims Landing Page.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E9A1BC8260CC4560008B27B /* Build configuration list for PBXNativeTarget "Baims Landing Page" */;
 			buildPhases = (
+				E5D42FC4FF080F2843DD2F50 /* [CP] Check Pods Manifest.lock */,
 				4E9A1BB0260CC4540008B27B /* Sources */,
 				4E9A1BB1260CC4540008B27B /* Frameworks */,
 				4E9A1BB2260CC4540008B27B /* Resources */,
+				F66A76F40399482A79369058 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,10 +162,53 @@
 				4E9A1BC4260CC4560008B27B /* LaunchScreen.storyboard in Resources */,
 				4E9A1BC1260CC4560008B27B /* Assets.xcassets in Resources */,
 				4E9A1BBF260CC4540008B27B /* Main.storyboard in Resources */,
+				4E9A1BD9260CFCAE0008B27B /* AirplaneWindow.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E5D42FC4FF080F2843DD2F50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Baims Landing Page-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F66A76F40399482A79369058 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Baims Landing Page/Pods-Baims Landing Page-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Baims Landing Page/Pods-Baims Landing Page-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Baims Landing Page/Pods-Baims Landing Page-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4E9A1BB0260CC4540008B27B /* Sources */ = {
@@ -291,6 +363,7 @@
 		};
 		4E9A1BC9260CC4560008B27B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA30DC7498CC674028E5DCFF /* Pods-Baims Landing Page.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +383,7 @@
 		};
 		4E9A1BCA260CC4560008B27B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4E1D405D7AB93BDB303F709 /* Pods-Baims Landing Page.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
