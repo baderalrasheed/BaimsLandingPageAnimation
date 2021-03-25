@@ -20,6 +20,7 @@ class LandingViewController: UIViewController {
     var backgroundTwo : UIView!
     var backgroundThree : UIView!
     var pageControl : UIPageControl!
+    var titleOne : UILabel!
     var swimmingImageView : UIImageView!
     
     override func viewDidLoad() {
