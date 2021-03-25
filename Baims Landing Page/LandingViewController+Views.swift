@@ -41,6 +41,14 @@ extension LandingViewController
         titleTwo.textAlignment = .center
         titleTwo.alpha = 0
         
+        titleThree = UILabel()
+        titleThree.font = UIFont.systemFont(ofSize: 24, weight: .medium)
+        titleThree.numberOfLines = 2
+        titleThree.text = "Live sessions with\nthe best instructors!"
+        titleThree.textColor = .white
+        titleThree.textAlignment = .center
+        titleThree.alpha = 0
+        
         // MARK: Page Control
         pageControl = UIPageControl(frame: CGRect(x: 0, y: self.view.frame.height - 100, width: self.view.frame.width, height: 70))
         pageControl.numberOfPages = 5
@@ -76,6 +84,15 @@ extension LandingViewController
         coffeeImageView.frame.size = CGSize(width: 95, height: 90)
         coffeeImageView.contentMode = .scaleAspectFill
         
+        // MARK: Live Session
+        liveSession = .init(name: "LiveSessionAnimation")
+        liveSession.center = self.liveSessionOriginOne
+        liveSession.frame.size = CGSize(width: 300, height: 300)
+        liveSession.contentMode = .scaleAspectFit
+        liveSession.loopMode = .playOnce
+        liveSession.stop()
+        liveSession.isUserInteractionEnabled = false
+        
         
         // MARK: Adding Subviews
         self.view.addSubview(backgroundOne)
@@ -83,17 +100,20 @@ extension LandingViewController
         self.view.insertSubview(backgroundThree, belowSubview: backgroundTwo)
         self.view.addSubview(titleOne)
         self.view.addSubview(titleTwo)
+        self.view.addSubview(titleThree)
         self.view.addSubview(pageControl)
         self.view.addSubview(swimmingImageView)
         self.view.addSubview(airplaneWindow)
         self.view.addSubview(notebookImageView)
         self.view.addSubview(coffeeImageView)
+        self.view.addSubview(liveSession)
         
         backgroundOne.translatesAutoresizingMaskIntoConstraints = false
         backgroundTwo.translatesAutoresizingMaskIntoConstraints = false
         backgroundThree.translatesAutoresizingMaskIntoConstraints = false
         titleOne.translatesAutoresizingMaskIntoConstraints = false
         titleTwo.translatesAutoresizingMaskIntoConstraints = false
+        titleThree.translatesAutoresizingMaskIntoConstraints = false
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         
         self.setupConstraints()
@@ -104,10 +124,16 @@ extension LandingViewController
         swimmingOrigin = CGPoint(x: parentViewSize.width - 130, y: parentViewSize.height / 3)
         
         airplaneWindowOriginOne = CGPoint(x: parentViewSize.width / 2, y: -250)
-        airplaneWindowOriginTwo = CGPoint(x: parentViewSize.width / 2, y: airplaneWindowOriginOne.y + 1.5 * parentViewSize.height/2.4)
+        airplaneWindowOriginTwo = CGPoint(x: airplaneWindowOriginOne.x, y: airplaneWindowOriginOne.y + 1.5 * parentViewSize.height/2.4)
         
         notebookOriginOne = CGPoint(x: ( parentViewSize.width / 2 ) - 40, y: -250)
         coffeeOriginOne = CGPoint(x: notebookOriginOne.x + 120, y: -270)
+        
+        notebookOriginTwo = CGPoint(x: notebookOriginOne.x, y: notebookOriginOne.y + ( 1.5 * parentViewSize.height/2.4 ))
+        coffeeOriginTwo = CGPoint(x: coffeeOriginOne.x, y: coffeeOriginOne.y + ( 1.5 * parentViewSize.height/2.4 ))
+        
+        liveSessionOriginOne = CGPoint(x: parentViewSize.width / 2, y: -250)
+        liveSessionOriginTwo = CGPoint(x: liveSessionOriginOne.x, y: liveSessionOriginOne.y + 1.5 * parentViewSize.height/2.4)
     }
     
     func setupConstraints()
@@ -133,6 +159,11 @@ extension LandingViewController
         titleTwo.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         titleTwo.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.leadingAnchor, constant: 24).isActive = true
         titleTwo.trailingAnchor.constraint(greaterThanOrEqualTo: self.view.trailingAnchor, constant: -24).isActive = true
+        
+        titleThree.bottomAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: -44).isActive = true
+        titleThree.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        titleThree.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.leadingAnchor, constant: 24).isActive = true
+        titleThree.trailingAnchor.constraint(greaterThanOrEqualTo: self.view.trailingAnchor, constant: -24).isActive = true
         
         // Page Control
         pageControl.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant:-20).isActive = true

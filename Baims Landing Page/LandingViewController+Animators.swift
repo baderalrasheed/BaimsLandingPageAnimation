@@ -17,6 +17,8 @@ extension LandingViewController
             self.firstAnimation()
         case 0...1:
             self.secondAnimation()
+        case 1...2:
+            self.thirdAnimation()
         default:
             break
         }
@@ -47,7 +49,7 @@ extension LandingViewController
         let percentage = CGFloat(percentageOfCurrentPage())
         let airplaneWindowMovementPath = self.view.frame.width-100
         let notebookAndCoffeeMovementPath = self.view.frame.height/2.4
-        let notebookAndCoffeeRotationPath = CGFloat(-45)
+        let notebookRotationPath = CGFloat(-45)
         let coffeeRotationPath = CGFloat(115)
         
         airplaneWindow.center.x = airplaneWindowOriginTwo.x - ( percentage * 1.5 * airplaneWindowMovementPath )
@@ -55,15 +57,43 @@ extension LandingViewController
         
         notebookImageView.layer.position.x = notebookOriginOne.x
         notebookImageView.layer.position.y = notebookOriginOne.y + ( percentage * 1.5 * notebookAndCoffeeMovementPath )
-        notebookImageView.rotateToAngle(degree: notebookAndCoffeeRotationPath * percentage)
+        notebookImageView.rotateToAngle(degree: notebookRotationPath * percentage)
         
         coffeeImageView.layer.position.x = coffeeOriginOne.x
         coffeeImageView.layer.position.y = coffeeOriginOne.y + ( percentage * 1.5 * notebookAndCoffeeMovementPath )
         coffeeImageView.rotateToAngle(degree: coffeeRotationPath * percentage)
         
         backgroundOne.alpha = 1 - percentage
-        titleOne.alpha = 1 - ( percentage / 0.3 ) //1 - ( percentage * 2 )
+        titleOne.alpha = 1 - ( percentage / 0.3 )
         titleTwo.alpha = 1 - ( ( 1 - percentage ) / 0.5 )
+    }
+    
+    func thirdAnimation()
+    {
+        let percentage = CGFloat(percentageOfCurrentPage())
+        let notebookAndCoffeeMovementPath = self.view.frame.width-200
+        let notebookOriginalRotation = CGFloat(-45)
+        let coffeeOriginalRotation = CGFloat(115)
+        let liveSessionMovementPath = self.view.frame.height/2.4
+        
+        notebookImageView.layer.position.x = notebookOriginTwo.x - ( percentage * 1.5 * notebookAndCoffeeMovementPath )
+        notebookImageView.layer.position.y = notebookOriginTwo.y
+        notebookImageView.rotateToAngle(degree: notebookOriginalRotation + 45 * percentage)
+        
+        coffeeImageView.layer.position.x = coffeeOriginTwo.x + ( percentage * 1.5 * notebookAndCoffeeMovementPath )
+        coffeeImageView.layer.position.y = coffeeOriginTwo.y
+        coffeeImageView.rotateToAngle(degree: coffeeOriginalRotation - 200 * percentage)
+        
+        liveSession.center.x = self.view.frame.width/2
+        liveSession.center.y = liveSessionOriginOne.y + ( percentage * 1.5 * liveSessionMovementPath )
+        
+        if percentageOfCurrentPage() >= 0.8 && liveSession.isAnimationPlaying == false {
+            liveSession.play(fromFrame: 14, toFrame: 170, loopMode: .autoReverse)
+        }
+        
+        backgroundTwo.alpha = 1 - percentage
+        titleTwo.alpha = 1 - ( percentage / 0.3 )
+        titleThree.alpha = 1 - ( ( 1 - percentage ) / 0.5 )
     }
 }
 
