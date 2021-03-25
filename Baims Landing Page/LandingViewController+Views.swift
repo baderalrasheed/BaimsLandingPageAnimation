@@ -49,11 +49,11 @@ extension LandingViewController
         pageControl.isUserInteractionEnabled = false
         
         // MARK: Swimming Guy
-        swimmingImageView = UIImageView()
+        swimmingImageView = UIImageView(image: #imageLiteral(resourceName: "swimming"))
         swimmingImageView.center = CGPoint(x: 10000, y: 10000)
         swimmingImageView.frame.size = CGSize(width: 222, height: 219)
-        swimmingImageView.image = #imageLiteral(resourceName: "swimming")
         swimmingImageView.contentMode = .scaleToFill
+        
         
         // MARK: Airplane Window
         airplaneWindow = .init(name: "AirplaneWindow")
@@ -62,6 +62,20 @@ extension LandingViewController
         airplaneWindow.contentMode = .scaleAspectFit
         airplaneWindow.loopMode = .playOnce
         airplaneWindow.stop()
+        airplaneWindow.isUserInteractionEnabled = false
+        
+        // MARK: Notebook
+        notebookImageView = UIImageView(image: #imageLiteral(resourceName: "notebook"))
+        notebookImageView.center = notebookOriginOne
+        notebookImageView.frame.size = CGSize(width: 180, height: 260)
+        notebookImageView.contentMode = .scaleAspectFill
+        
+        // MARK: Coffee
+        coffeeImageView = UIImageView(image: #imageLiteral(resourceName: "coffee"))
+        coffeeImageView.frame.origin = coffeeOriginOne
+        coffeeImageView.frame.size = CGSize(width: 95, height: 90)
+        coffeeImageView.contentMode = .scaleAspectFill
+        
         
         // MARK: Adding Subviews
         self.view.addSubview(backgroundOne)
@@ -72,6 +86,8 @@ extension LandingViewController
         self.view.addSubview(pageControl)
         self.view.addSubview(swimmingImageView)
         self.view.addSubview(airplaneWindow)
+        self.view.addSubview(notebookImageView)
+        self.view.addSubview(coffeeImageView)
         
         backgroundOne.translatesAutoresizingMaskIntoConstraints = false
         backgroundTwo.translatesAutoresizingMaskIntoConstraints = false
@@ -86,8 +102,12 @@ extension LandingViewController
     func setupOrigins(parentViewSize: CGSize)
     {
         swimmingOrigin = CGPoint(x: parentViewSize.width - 130, y: parentViewSize.height / 3)
+        
         airplaneWindowOriginOne = CGPoint(x: parentViewSize.width / 2, y: -250)
-        airplaneWindowOriginTwo = CGPoint(x: parentViewSize.width / 2, y: airplaneWindowOriginOne.y + 1.5 * parentViewSize.height/2.5)
+        airplaneWindowOriginTwo = CGPoint(x: parentViewSize.width / 2, y: airplaneWindowOriginOne.y + 1.5 * parentViewSize.height/2.4)
+        
+        notebookOriginOne = CGPoint(x: ( parentViewSize.width / 2 ) - 40, y: -250)
+        coffeeOriginOne = CGPoint(x: notebookOriginOne.x + 120, y: -270)
     }
     
     func setupConstraints()

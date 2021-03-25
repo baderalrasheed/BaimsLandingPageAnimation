@@ -17,6 +17,10 @@ class LandingViewController: UIViewController {
     var swimmingOrigin : CGPoint!
     var airplaneWindowOriginOne : CGPoint!
     var airplaneWindowOriginTwo : CGPoint!
+    var notebookOriginOne : CGPoint!
+    var notebookOriginTwo : CGPoint!
+    var coffeeOriginOne : CGPoint!
+    var coffeeOriginTwo : CGPoint!
     
     // MARK: Views
     var backgroundOne : UIView!
@@ -27,6 +31,8 @@ class LandingViewController: UIViewController {
     var titleTwo : UILabel!
     var swimmingImageView : UIImageView!
     var airplaneWindow : AnimationView!
+    var notebookImageView : UIImageView!
+    var coffeeImageView : UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
