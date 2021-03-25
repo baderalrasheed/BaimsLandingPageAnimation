@@ -49,6 +49,14 @@ extension LandingViewController
         titleThree.textAlignment = .center
         titleThree.alpha = 0
         
+        letsGoTitle = UILabel()
+        letsGoTitle.font = UIFont.systemFont(ofSize: 36, weight: .medium)
+        letsGoTitle.numberOfLines = 1
+        letsGoTitle.text = "Let's Begin!"
+        letsGoTitle.textColor = .white
+        letsGoTitle.textAlignment = .center
+        letsGoTitle.transform = CGAffineTransform(scaleX: 0, y: 0)
+        
         // MARK: Page Control
         pageControl = UIPageControl(frame: CGRect(x: 0, y: self.view.frame.height - 100, width: self.view.frame.width, height: 70))
         pageControl.numberOfPages = 5
@@ -93,6 +101,12 @@ extension LandingViewController
         liveSession.stop()
         liveSession.isUserInteractionEnabled = false
         
+        // MARK: Button
+        nextButton = UIButton(type: .roundedRect)
+        nextButton.frame.size = CGSize(width: 300, height: 64)
+        nextButton.center = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height + 60)
+        nextButton.setTitle("Next", for: .normal)
+        nextButton.backgroundColor = .white
         
         // MARK: Adding Subviews
         self.view.addSubview(backgroundOne)
@@ -101,12 +115,14 @@ extension LandingViewController
         self.view.addSubview(titleOne)
         self.view.addSubview(titleTwo)
         self.view.addSubview(titleThree)
+        self.view.addSubview(letsGoTitle)
         self.view.addSubview(pageControl)
         self.view.addSubview(swimmingImageView)
         self.view.addSubview(airplaneWindow)
         self.view.addSubview(notebookImageView)
         self.view.addSubview(coffeeImageView)
         self.view.addSubview(liveSession)
+        self.view.addSubview(nextButton)
         
         backgroundOne.translatesAutoresizingMaskIntoConstraints = false
         backgroundTwo.translatesAutoresizingMaskIntoConstraints = false
@@ -114,6 +130,7 @@ extension LandingViewController
         titleOne.translatesAutoresizingMaskIntoConstraints = false
         titleTwo.translatesAutoresizingMaskIntoConstraints = false
         titleThree.translatesAutoresizingMaskIntoConstraints = false
+        letsGoTitle.translatesAutoresizingMaskIntoConstraints = false
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         
         self.setupConstraints()
@@ -134,6 +151,8 @@ extension LandingViewController
         
         liveSessionOriginOne = CGPoint(x: parentViewSize.width / 2, y: -250)
         liveSessionOriginTwo = CGPoint(x: liveSessionOriginOne.x, y: liveSessionOriginOne.y + 1.5 * parentViewSize.height/2.4)
+        
+        nextButtonOrigin = CGPoint(x: parentViewSize.width / 2, y: parentViewSize.height + 60)
     }
     
     func setupConstraints()
@@ -164,6 +183,9 @@ extension LandingViewController
         titleThree.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         titleThree.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.leadingAnchor, constant: 24).isActive = true
         titleThree.trailingAnchor.constraint(greaterThanOrEqualTo: self.view.trailingAnchor, constant: -24).isActive = true
+        
+        letsGoTitle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        letsGoTitle.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         
         // Page Control
         pageControl.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant:-20).isActive = true

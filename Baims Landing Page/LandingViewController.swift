@@ -23,6 +23,7 @@ class LandingViewController: UIViewController {
     var coffeeOriginTwo : CGPoint!
     var liveSessionOriginOne : CGPoint!
     var liveSessionOriginTwo : CGPoint!
+    var nextButtonOrigin : CGPoint!
     
     // MARK: Views
     var backgroundOne : UIView!
@@ -32,11 +33,13 @@ class LandingViewController: UIViewController {
     var titleOne : UILabel!
     var titleTwo : UILabel!
     var titleThree : UILabel!
+    var letsGoTitle : UILabel!
     var swimmingImageView : UIImageView!
     var airplaneWindow : AnimationView!
     var notebookImageView : UIImageView!
     var coffeeImageView : UIImageView!
     var liveSession : AnimationView!
+    var nextButton : UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

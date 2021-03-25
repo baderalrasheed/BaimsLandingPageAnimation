@@ -19,6 +19,8 @@ extension LandingViewController
             self.secondAnimation()
         case 1...2:
             self.thirdAnimation()
+        case 2...3:
+            self.fourthAnimation()
         default:
             break
         }
@@ -94,6 +96,23 @@ extension LandingViewController
         backgroundTwo.alpha = 1 - percentage
         titleTwo.alpha = 1 - ( percentage / 0.3 )
         titleThree.alpha = 1 - ( ( 1 - percentage ) / 0.5 )
+    }
+    
+    func fourthAnimation()
+    {
+        let percentage = CGFloat(percentageOfCurrentPage())
+        let liveSessionMovementPath = self.view.frame.width-100
+        
+        liveSession.center.x = liveSessionOriginTwo.x - ( percentage * 1.5 * liveSessionMovementPath )
+        liveSession.center.y = liveSessionOriginTwo.y
+        
+        let letsGoScale = max(0, 1 - ( ( 1 - percentage ) / 0.5 ))
+        letsGoTitle.transform = CGAffineTransform(scaleX: letsGoScale, y: letsGoScale)
+        
+        nextButton.center.x = nextButtonOrigin.x
+        nextButton.center.y = nextButtonOrigin.y + percentage * ( pageControl.center.y - nextButtonOrigin.y - 20 )
+        
+        titleThree.alpha = 1 - ( percentage / 0.3 )
     }
 }
 
