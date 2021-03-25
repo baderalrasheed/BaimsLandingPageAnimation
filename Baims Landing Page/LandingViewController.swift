@@ -24,6 +24,7 @@ class LandingViewController: UIViewController {
     var backgroundThree : UIView!
     var pageControl : UIPageControl!
     var titleOne : UILabel!
+    var titleTwo : UILabel!
     var swimmingImageView : UIImageView!
     var airplaneWindow : AnimationView!
     

@@ -33,11 +33,20 @@ extension LandingViewController
         titleOne.textColor = .white
         titleOne.textAlignment = .center
         
+        titleTwo = UILabel()
+        titleTwo.font = UIFont.systemFont(ofSize: 24, weight: .medium)
+        titleTwo.numberOfLines = 2
+        titleTwo.text = "Videos based on your\ncollege’s curriculum"
+        titleTwo.textColor = .white
+        titleTwo.textAlignment = .center
+        titleTwo.alpha = 0
+        
         // MARK: Page Control
         pageControl = UIPageControl(frame: CGRect(x: 0, y: self.view.frame.height - 100, width: self.view.frame.width, height: 70))
         pageControl.numberOfPages = 5
         pageControl.currentPage = 0
         pageControl.center.x = self.view.frame.width / 2
+        pageControl.isUserInteractionEnabled = false
         
         // MARK: Swimming Guy
         swimmingImageView = UIImageView()
@@ -58,7 +67,8 @@ extension LandingViewController
         self.view.addSubview(backgroundOne)
         self.view.insertSubview(backgroundTwo, belowSubview: backgroundOne)
         self.view.insertSubview(backgroundThree, belowSubview: backgroundTwo)
-        self.view.insertSubview(titleOne, aboveSubview: backgroundOne)
+        self.view.addSubview(titleOne)
+        self.view.addSubview(titleTwo)
         self.view.addSubview(pageControl)
         self.view.addSubview(swimmingImageView)
         self.view.addSubview(airplaneWindow)
@@ -66,8 +76,8 @@ extension LandingViewController
         backgroundOne.translatesAutoresizingMaskIntoConstraints = false
         backgroundTwo.translatesAutoresizingMaskIntoConstraints = false
         backgroundThree.translatesAutoresizingMaskIntoConstraints = false
-        titleOne.translatesAutoresizingMaskIntoConstraints
-         = false
+        titleOne.translatesAutoresizingMaskIntoConstraints = false
+        titleTwo.translatesAutoresizingMaskIntoConstraints = false
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         
         self.setupConstraints()
@@ -77,6 +87,7 @@ extension LandingViewController
     {
         swimmingOrigin = CGPoint(x: parentViewSize.width - 130, y: parentViewSize.height / 3)
         airplaneWindowOriginOne = CGPoint(x: parentViewSize.width / 2, y: -250)
+        airplaneWindowOriginTwo = CGPoint(x: parentViewSize.width / 2, y: airplaneWindowOriginOne.y + 1.5 * parentViewSize.height/2.5)
     }
     
     func setupConstraints()
@@ -95,9 +106,13 @@ extension LandingViewController
         // Labels
         titleOne.bottomAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: -44).isActive = true
         titleOne.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        //titleOne.widthAnchor.constraint(lessThanOrEqualToConstant: 308).isActive = true
         titleOne.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.leadingAnchor, constant: 24).isActive = true
         titleOne.trailingAnchor.constraint(greaterThanOrEqualTo: self.view.trailingAnchor, constant: -24).isActive = true
+        
+        titleTwo.bottomAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: -44).isActive = true
+        titleTwo.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        titleTwo.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.leadingAnchor, constant: 24).isActive = true
+        titleTwo.trailingAnchor.constraint(greaterThanOrEqualTo: self.view.trailingAnchor, constant: -24).isActive = true
         
         // Page Control
         pageControl.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant:-20).isActive = true
