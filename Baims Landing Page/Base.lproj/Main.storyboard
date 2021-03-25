@@ -1,24 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Landing View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LandingViewController" customModule="Baims_Landing_Page" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EsJ-eg-GD3">
+                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8p-2K-kG6">
+                                        <rect key="frame" x="0.0" y="0.0" width="2070" height="896"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="E8p-2K-kG6" firstAttribute="top" secondItem="EsJ-eg-GD3" secondAttribute="top" id="28k-lS-QvC"/>
+                                    <constraint firstItem="E8p-2K-kG6" firstAttribute="leading" secondItem="EsJ-eg-GD3" secondAttribute="leading" id="AVP-Vo-sSe"/>
+                                    <constraint firstAttribute="trailing" secondItem="E8p-2K-kG6" secondAttribute="trailing" id="PCf-El-PaU"/>
+                                    <constraint firstAttribute="bottom" secondItem="E8p-2K-kG6" secondAttribute="bottom" id="z31-gO-1EF"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="IGb-25-w1E"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="PJh-Oh-70s"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EsJ-eg-GD3" secondAttribute="trailing" id="0Q1-IN-fMj"/>
+                            <constraint firstItem="EsJ-eg-GD3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Cv-kC-IG3"/>
+                            <constraint firstItem="EsJ-eg-GD3" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="R1t-6k-v05"/>
+                            <constraint firstItem="E8p-2K-kG6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="5" id="hEt-9l-TwD"/>
+                            <constraint firstItem="E8p-2K-kG6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="roE-Uc-RfG"/>
+                            <constraint firstItem="EsJ-eg-GD3" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="xKZ-HK-gMD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="EsJ-eg-GD3" id="lnb-T1-q5a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-33.333333333333336" y="93.75"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
